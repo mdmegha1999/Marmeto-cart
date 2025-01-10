@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha384-dyB6lRGLfRqhVfbIrPSZRtJaqGq9UbI4S41Jrrn5AnSH38I+AK4nFubF4YcCcft5"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+    <title>Marmeto Cart</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header Section -->
+      <header class="header">
+        <div class="logo-section">
+          <img src="./logo.png" alt="Marmeto Logo" class="logo" />
+          <h1>Marmeto</h1>
+        </div>
+        <nav class="navigation">
+          <a href="#">Home</a>
+          <a href="#">Shop</a>
+          <a href="#">About</a>
+          <a href="#">Contact</a>
+        </nav>
+        <div class="icons">
+          <a href="#" title="Search"
+            ><img
+              src="./akar-icons_search.png"
+              alt="Search"
+              class="search-icon"
+          /></a>
+          <a href="#" title="Like"
+            ><img
+              src="./akar-icons_heart.png"
+              alt="like"
+              class="like-icon"
+            />
+          </a>
+          <a href="#" title="Shopping Cart"
+            ><img
+              src="./ant-design_shopping-cart-outlined.png"
+              alt="Cart"
+              class="cart-icon"
+          /></a>
+        </div>
+      </header>
+
+      <!-- Main Section -->
+      <main>
+        <!-- Breadcrumb -->
+        <section class="breadcrumb-section">
+          <div class="home-logo">
+            <img src="./logo.png" alt="logo" />
+            <h1>Cart</h1>
+            <nav class="breadcrumb">
+              <a href="#">Home</a> &gt; <a href="#">Cart</a>
+            </nav>
+          </div>
+        </section>
+
+        <!-- Cart Table Section -->
+        <section class="cart-section">
+          <div class="cart-wrapper">
+            <!-- Cart Table -->
+            <div class="cart-content">
+              <table class="cart-table">
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody id="cart-items"></tbody>
+              </table>
+            </div>
+
+            <!-- Cart Totals Section -->
+            <div class="cart-totals">
+              <h2>Cart Totals</h2>
+              <ul>
+                <li class="cart-item">
+                  Subtotal: <span id="cart-subtotal">Rs. 0.00</span>
+                </li>
+                <li class="cart-item">
+                  Total: <span id="cart-total">Rs. 0.00</span>
+                </li>
+              </ul>
+              <button class="checkout-btn">Check Out</button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Features Section -->
+      <div class="footer-row">
+        <!-- <div class="footer-item-container"> -->
+        <div class="footer-item">
+          <img src="./trophy 1.png" alt="High Quality" />
+          <div class="text">
+            <h3>High Quality</h3>
+            <p>crafted from top materials</p>
+          </div>
+        </div>
+        <div class="footer-item">
+          <img src="./guarantee.png" alt="Warranty Protection" />
+          <div class="text">
+            <h3>Warranty Protection</h3>
+            <p>Over 2 years</p>
+          </div>
+        </div>
+        <div class="footer-item">
+          <img src="./shipping.png" alt="Free Shipping" />
+          <div class="text">
+            <h3>Free Shipping</h3>
+            <p>Order over 150 $</p>
+          </div>
+        </div>
+        <div class="footer-item">
+          <img src="./customer-support.png" alt="24 / 7 Support" />
+          <div class="text">
+            <h3>24 / 7 Support</h3>
+            <p>Dedicated support</p>
+          </div>
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
