@@ -86,25 +86,12 @@ document.addEventListener("input", (event) => {
 
 populateCart();
 
-
-
-
-
-
-
-
-
-
-
-// Create a style element
 const style = document.createElement('style');
 style.innerHTML = `
     .remove-item {
-        background-color: transparent; /* Red background for the delete button */
+        background-color: transparent; 
         border: none; /* No border */
-        // border-radius: 4px; /* Rounded corners */
         cursor: pointer; /* Pointer cursor on hover */
-        // padding: 5px; /* Padding around the button */
         transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
     }
 
@@ -112,26 +99,17 @@ style.innerHTML = `
         width: 20px; /* Adjust size as needed */
         height: auto;
     }
-
-    /* Button hover effect */
-    
-
     /* Button active effect */
     .remove-item:active {
-        // background-color: #e60000; /* Even darker red when clicked */
         transform: scale(2.1); 
-        // transform: scale(0.95); /* Slightly shrink the button when clicked */
     }
 `;
 
-// Append the style element to the head
 document.head.appendChild(style);
 
-// Create the button element
 const button = document.createElement('button');
-button.className = 'remove-item'; // Add the class to the button
-button.setAttribute('data-item-id', item.id); // Set the data attribute
-button.innerHTML = '<img src="./images/ant-design_delete-filled.png" alt="Remove Item">'; // Add the image
+button.className = 'remove-item'; 
+button.setAttribute('data-item-id', item.id); 
+button.innerHTML = '<img src="./ant-design_delete-filled.png" alt="Remove Item">'; 
 
-// Append the button to the desired location in the DOM
-document.body.appendChild(button); // Change this to the appropriate parent element
+document.body.appendChild(button); 
