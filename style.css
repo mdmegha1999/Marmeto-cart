@@ -2,9 +2,9 @@
 
 html,
 body {
-  height: 100%;
   width: 100%;
   margin: 0;
+  font-family: "Gill Sans", sans-serif;
 }
 
 * {
@@ -61,6 +61,15 @@ body {
   background-position: center;
   padding: 30px 0;
 }
+.breadcrumb a {
+  text-decoration: none; 
+  color: black; 
+}
+
+.breadcrumb a:first-child {
+  font-weight: bold; 
+}
+
 
 .home-logo {
   margin: 50px;
@@ -77,9 +86,9 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  padding: 70px;
+  padding: 70px 0px 70px;
   width: 1240px;
-  height: 390px;
+  /* height: 390px; */
   top: 488px;
   left: 100px;
 }
@@ -113,7 +122,7 @@ body {
 .cart-totals li {
   margin-bottom: 10px;
   font-size: 16px;
-  font-family: 'poppins-bold', sans-serif !important;
+  font-family:"Gill Sans", sans-serif;
   width: 500;
   line-height: 24px;
   width: 69px;
@@ -198,17 +207,26 @@ body {
   align-items: center;
   gap: 10px;
 }
-.product-info img {
+/* .product-info img {
   width: 60px;
   height: 60px;
   object-fit: cover;
   border-radius: 8px;
-}
+} */
 .quantity-input {
   width: 50px;
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+.product-image {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .cart-totals h2 {
@@ -233,7 +251,7 @@ body {
   max-width: 222px; 
   height: 58.95px;
   padding: 10px;
-  font-family: "Poppins-Bold", sans-serif;
+  font-family: "Gill Sans", sans-serif;
   font-size: 20px;
   text-align: center;
   cursor: pointer;
@@ -293,7 +311,7 @@ body {
   }
 
   .cart-section {
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .cart-totals {
