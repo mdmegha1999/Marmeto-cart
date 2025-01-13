@@ -22,7 +22,6 @@ function formatCurrency(amount, currency) {
     currency: currency,
   }).format(amount / 100);
 }
-
 function populateCart() {
   const cartItemsContainer = document.getElementById("cart-items");
   const cartSubtotalElement = document.getElementById("cart-subtotal");
@@ -37,11 +36,13 @@ function populateCart() {
 
     row.innerHTML = `
         <td>
-          <div class="product-info">
-            <img src="${item.image}" alt="${item.title}" />
-            <span>${item.title}</span>
-          </div>
+            <img src="${item.image}" alt="${item.title}" class="product-image" />
+
+          
         </td>
+        <td><div class="product-info">
+            <span>${item.title}</span>
+          </div></td>
         <td>${formatCurrency(item.price, cartData.currency)}</td>
         <td>
           <input
@@ -54,8 +55,8 @@ function populateCart() {
         </td>
         <td>${formatCurrency(item.line_price, cartData.currency)}</td>
         <td>
-          <button class="remove-item" data-item-id="${item.id}">
-            <img src="./ant-design_delete-filled.png" alt="Remove Item">
+        <button class="remove-item" data-item-id="${item.id}">
+           <img src="./ant-design_delete-filled.png" alt="Remove Item">
           </button>
         </td>
       `;
@@ -68,6 +69,18 @@ function populateCart() {
   cartSubtotalElement.textContent = formatCurrency(subtotal, cartData.currency);
   cartTotalElement.textContent = formatCurrency(subtotal, cartData.currency);
 }
+document.addEventListener("click", (event) => {
+    if (event.target.closest(".remove-item")) {
+      const button = event.target.closest(".remove-item"); 
+      const itemId = button.dataset.itemId;
+      const itemIndex = cartData.items.findIndex((item) => item.id == itemId);
+      if (itemIndex !== -1) {
+        cartData.items.splice(itemIndex, 1); 
+      }
+  
+      populateCart();
+    }
+  });
 
 document.addEventListener("input", (event) => {
   if (event.target.classList.contains("quantity-input")) {
@@ -86,10 +99,11 @@ document.addEventListener("input", (event) => {
 
 populateCart();
 
+// Create a style element
 const style = document.createElement('style');
 style.innerHTML = `
     .remove-item {
-        background-color: transparent; 
+        background-color: transparent; /* Red background for the delete button */
         border: none; /* No border */
         cursor: pointer; /* Pointer cursor on hover */
         transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
@@ -104,12 +118,14 @@ style.innerHTML = `
         transform: scale(2.1); 
     }
 `;
-
 document.head.appendChild(style);
-
 const button = document.createElement('button');
 button.className = 'remove-item'; 
 button.setAttribute('data-item-id', item.id); 
-button.innerHTML = '<img src="./ant-design_delete-filled.png" alt="Remove Item">'; 
-
+button.innerHTML = '<img src="./images/ant-design_delete-filled.png" alt="Remove Item">'; 
 document.body.appendChild(button); 
+
+
+
+
+
